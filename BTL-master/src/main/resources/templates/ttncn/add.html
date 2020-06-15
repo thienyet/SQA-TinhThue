@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html layout:decorator="template" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css}">
+  	<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js}"></script>
+  	<script th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js}"></script>
+ 	<script th:src="@{/js/validate_ttncn.js}" type="text/javascript"></script> 
+  	
+	<link rel="stylesheet" th:href="@{/fontawesome/css/all.css}">
+  	<link rel="stylesheet" th:href="@{/css/welcome.css}">
+  	 <style type="text/css">
+		.row label{
+			width: 250px;
+		}
+	</style>
+
+	<title>Add TTNCN</title>
+</head>
+<body>
+	
+	<div layout:fragment="content">
+			<div class="col-md-9 content">
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<h3>Add TTNCN</h3>
+						</div>
+					</div>
+
+					<div class="row text-center">
+						<div class=" col-lg-6 col-lg-push-3 add">
+							<form th:action="@{/admin/addTTNCN}" id="form"  method="POST" role="form" th:object="${TTNCN}">
+								<div class="form-group content-form">
+									<label for="">Name:</label>
+									<input type="text" class="form-control" id="name" name="name" th:field ="*{name}" placeholder="Name">
+								</div>
+								<div class="form-group content-form">
+									<label for="">Birdth:</label>
+									<input type="text" class="form-control" id="birdth" name="birdth" th:field ="*{birdth}" placeholder="yyyy/MM/dd">
+								</div>
+								<div class="form-group content-form">
+									  <label for="">Đối tượng thu thuế:</label>
+									  <select class="form-control" th:field="*{taxerDTO.id}" id="id_taxer">
+									    <option th:each="i : ${taxers}" th:value="${i.id}" th:text="${i.name}"></option>
+									    
+									  </select>
+								</div>
+								<div class="form-group content-form">
+									  <label for="">MaST:</label>
+									  <select class="form-control" th:field="*{mathue.id}" id="id_mast">
+									    <option th:each="i : ${mathue}" th:value="${i.id}" th:text="${i.maST}"></option>
+									    
+									  </select>
+								</div>
+								<div class="form-group content-form">
+									<label for="">Tong thu nhap:</label>
+									<input type="number" class="form-control" id="tongthunhap" name="tongthunhap" th:field ="*{tongthunhap}" placeholder="tong thu nhap">
+								</div>
+								<div class="form-group content-form">
+									<label for="">Thu nhap tinh thue:</label>
+									<input type="number" class="form-control" id="thunhaptinhthue" name="thunhaptinhthue" th:field ="*{thunhaptinhthue}" placeholder="thu nhap tinh thue">
+								</div>
+								
+								
+								<div>
+									<h5 id="error" style="color: red"></h5>
+								</div>
+							
+								<button id="btn" type="submit" onclick="validate()"  class="btn btn-primary">Add</button>
+							</form>
+				
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<div class="footer">Design by team <a href="">LapTrinhWeb</a></div>
+						</div>
+					</div>	
+				</div>
+		</div>
+
+</body>
+
+</html>			
+	

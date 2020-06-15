@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html layout:decorator="template" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css}">
+  	<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js}"></script>
+  	<script th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js}"></script>
+ 	
+	<link rel="stylesheet" th:href="@{/fontawesome/css/all.css}">
+  	<link rel="stylesheet" th:href="@{/css/welcome.css}">
+  	 
+
+	<title>List KMT</title>
+</head>
+<body>
+	
+	<div layout:fragment="content">
+			<div class="col-md-9 content">
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<h3>List Khoan Mien Thue</h3>
+						</div>
+					</div>
+
+					<div class="row pad-wel text-center">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 list">
+							<table class="table table-hover text-center">
+								<thead>
+									<tr>
+										<th class="text-center">MaST</th>
+										<th class="text-center">Tiền ăn</th>
+										<th class="text-center">Tiền điện thoại</th>
+										<th class="text-center">Tiền thành phần</th>
+										<th class="text-center">Tiền di chuyển</th>
+										<th class="text-center">Tiền khác</th>
+										<th class="text-center">Tổng tiền</th>
+										
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each ="kmt : ${list}">
+										<td class="text-center" th:text="${kmt.mast} "></td>
+										<td class="text-center" th:text="${kmt.tienan}"></td>
+										<td class="text-center" th:text="${kmt.tiendt}"></td>
+										<td class="text-center" th:text="${kmt.tientp}"></td>
+										<td class="text-center" th:text="${kmt.tiendc}"></td>
+										<td class="text-center" th:text="${kmt.tienkhac}"></td>
+										<td class="text-center" th:text="${kmt.tongmien}"></td>
+										
+										
+									</tr>
+								</tbody>
+							</table>
+				
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<div class="footer">Design by team <a href="">LapTrinhWeb</a></div>
+						</div>
+					</div>	
+				</div>
+		</div>
+
+</body>
+
+</html>			
+	

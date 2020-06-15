@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html layout:decorator="template" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css}">
+  	<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js}"></script>
+  	<script th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js}"></script>
+ 	<script th:src="@{/js/validate_userpass.js}" type="text/javascript"></script>
+  	
+	<link rel="stylesheet" th:href="@{/fontawesome/css/all.css}">
+  	<link rel="stylesheet" th:href="@{/css/welcome.css}">
+  	 <style type="text/css">
+		.row label{
+			width: 250px;
+		}
+	</style>
+
+	<title>Edit Person</title>
+</head>
+<body>
+	
+	<div layout:fragment="content">
+			<div class="col-md-9 content">
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<h3>Edit Person</h3>
+						</div>
+					</div>
+
+					<div class="row text-center">
+						<div class=" col-lg-6 col-lg-push-3 add">
+							<form th:action="@{/admin/editTS}" id="form" method="POST" role="form" th:object="${ThueSuatDTO}">
+								<input type="hidden" th:field ="*{id_mast}">
+								<input type="hidden" th:field ="*{id}">
+								<div class="form-group content-form">
+									<label for="">Bậc thuế:</label>
+									<input type="number" class="form-control" id="bacthue" th:field ="*{bacthue}" placeholder="bậc thuế">
+								</div>
+								<div class="form-group content-form">
+									<label for="">Lương min:</label>
+									<input type="number" class="form-control" id="luongmin" th:field ="*{luongmin}" placeholder="lương min">
+								</div>
+								<div class="form-group content-form">
+									<label for="">Lương max:</label>
+									<input type="number" class="form-control" id="luongmax" th:field ="*{luongmax}" placeholder="lương max">
+								</div>
+								<div class="form-group content-form">
+									<label for="">Phần trăm thuế:</label>
+									<input type="number" class="form-control" id="phantramthue" th:field ="*{phantramthue}" placeholder=" phan tram thue">
+								</div>
+								<div class="form-group content-form">
+									<label for="">Tiền giảm TU:</label>
+									<input type="number" class="form-control" id="tiengiamTU" th:field ="*{tiengiamTU}" placeholder="tien giam TU">
+								</div>
+								
+								<div>
+									<h5 id="error" style="color: red"></h5>
+								</div>
+							
+								<button id="btn" type="submit" onclick="validate()" class="btn btn-primary">Add</button>
+							</form>
+				
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<div class="footer">Design by team <a href="">LapTrinhWeb</a></div>
+						</div>
+					</div>	
+				</div>
+		</div>
+
+</body>
+
+</html>			
+	

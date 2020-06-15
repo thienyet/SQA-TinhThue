@@ -1,0 +1,45 @@
+*{}
+
+button.btn.btn-primary.register {
+    width: 50%;
+    margin-top: 30px;
+}
+
+.col-md-4.col-md-push-4.form {
+    background-color: white;
+    border-radius: 9px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.checkbox {
+    text-align: start;
+}
+span {
+    background-color: white;
+}
+
+h2 {
+    background: white;
+    line-height: 4px;
+    border-bottom: 1px solid black;
+}
+
+.logo {
+   
+    margin-bottom: 50px;
+}
+
+a {
+    float: left;
+    padding-left: 30px;
+}
+
+.row.text-center {
+    height: 100%;
+}
+
+.container-fluid {
+    height: 660px;
+}

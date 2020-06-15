@@ -1,0 +1,104 @@
+*{}
+
+.content h5 {
+    float: right;
+}
+
+.content-form label {
+    margin: 0px;
+    line-height: 34px;
+    padding-right: 20px;
+    width: 250px;
+    text-align: left;
+}
+
+.pad-wel {
+    padding: 14px;
+}
+
+.welcome {
+    border: 1px solid #E8E8E8;
+    background-color: white;
+    border-radius: 8px;
+    min-height: 400px
+}
+
+.menu ul>li>ul>li>a {
+    padding-left: 16px;
+}
+
+.col-md-3.menu {
+    height: 580px;
+    border-right: 1px solid #E8E8E8;
+}
+
+.menu h6 {
+    font-size: 20px;
+}
+
+.menu li.list-group-item {
+    padding: 0px;
+    border: none;
+}
+
+.account {
+    text-align: end;
+}
+
+.account h4,.account h5 {
+    margin: 0px;
+    padding: 5px 0px;
+}
+
+input.form-control {
+    width: 100% !important;
+}
+
+.add input.form-control, select {
+    width: 59% !important;
+    float: right;
+}
+
+i.fas.fa-search {
+    color: black;
+}
+
+.search button.btn.btn-primary {
+    background: white;
+    border: none;
+    position: absolute;
+    right: 18px;
+    top: 22px;
+    height: 25px;
+}
+
+.logo {
+    line-height: 83px;
+    padding-left: 20px;
+    font-size: 30px;
+}
+
+.header .row div {
+    height: 83px;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.form-group {
+    padding-top: 20px;
+}
+
+.content-form {
+    display: inline-flex;
+}
+
+.header {
+    height: 83px;
+    border-bottom: 1px solid #E8E8E8;
+}
+.content{
+	background-color: #f3f4f7;
+	min-height: 580px;
+}

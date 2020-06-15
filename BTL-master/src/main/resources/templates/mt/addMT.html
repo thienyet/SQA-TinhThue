@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html layout:decorator="template" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css}">
+  	<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js}"></script>
+  	<script th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js}"></script>
+ 
+  	
+	<link rel="stylesheet" th:href="@{/fontawesome/css/all.css}">
+  	<link rel="stylesheet" th:href="@{/css/welcome.css}">
+  	 
+
+	<title>Add  Ma Thue</title>
+</head>
+<body>
+	
+	<div layout:fragment="content">
+			<div class="col-md-9 content">
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<h3>Add Ma Thue</h3>
+						</div>
+					</div>
+
+					<div class="row text-center">
+						<div class=" col-lg-6 col-lg-push-3 add">
+							<form th:action="@{/admin/addMT}" id="form" method="POST" role="form" th:object="${maThueDTO}">
+							
+								<div class="form-group content-form">
+									<label for="">MaST:</label>
+									<input type="text" class="form-control" id="username" th:field ="*{maST}" placeholder="Ma so thue">
+								</div>
+								
+								<div>
+									<h5 id="error" style="color: red"></h5>
+								</div>
+							
+								<button id="btn" type="submit" onclick="validate()" class="btn btn-primary">Add</button>
+							</form>
+				
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<div class="footer">Design by team <a href="">LapTrinhWeb</a></div>
+						</div>
+					</div>	
+				</div>
+		</div>
+  	<script type="text/javascript">
+			
+			function validate() {
+	
+		
+			document.getElementById("form").addEventListener("submit",function(e){
+				debugger;
+				var username= document.getElementById("username");
+				
+				var form = document.getElementById("form");
+				var error = document.getElementById("error");
+				
+				var mess= [];
+				if(username.value ==""|| username.value ==null){
+					mess.push("ma so thue không được để rỗng");
+				}
+				
+				
+				
+				
+				if (mess.length>0){
+					e.preventDefault();
+					error.innerText= mess.join(", ");
+				}
+		</script> 
+</body>
+
+</html>			
+	

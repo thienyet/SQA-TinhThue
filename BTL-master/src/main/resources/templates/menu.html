@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:score="http://thymeleafexamples">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div th:fragment="menu">
+		<div class="col-md-3 menu">
+					<ul class="list-group">
+						<li class="list-group-item"><a href="">
+							<h6><i class="fas fa-door-open"></i>Dashboard</h6>
+						</a>
+					</li>
+						<li class="list-group-item">
+							<h6><i class="fas fa-users"></i>Person</h6>
+						<ul class="list-group">
+							<li class="list-group-item"><a th:href="@{/admin/addPerson}">Add Person</a></li>
+							<!-- <li class="list-group-item"><a th:href="@{/admin/editPerson}">Edit Person</a></li> -->
+							<li class="list-group-item"><a th:href="@{/admin/listPerson}">List Person</a></li>
+						</ul>
+					</li>
+					<li class="list-group-item">
+							<h6><i class="fas fa-users"></i>Thuế thu nhập cá nhân</h6>
+						<ul class="list-group">
+							<li class="list-group-item"><a th:href="@{/admin/addTTNCN}">Add TTNCN</a></li>
+							<!-- <li class="list-group-item"><a th:href="@{/admin/editTTNCN}">Edit Person</a></li> -->
+							<li class="list-group-item"><a th:href="@{/admin/listTTNCN}">List TTNCN</a></li>
+						</ul>
+					</li>
+					</li>
+						<li class="list-group-item">
+							<h6><i class="fas fa-users"></i>Thuế Suất</h6>
+						<ul class="list-group">
+							<li class="list-group-item"><a th:href="@{/admin/addMT}">Add </a></li>
+							<!-- <li class="list-group-item"><a th:href="@{/admin/editMT}">Edit </a></li> -->
+							<li class="list-group-item"><a th:href="@{/admin/listMT}">List </a></li>
+						</ul>
+					</li>
+						<li class="list-group-item">
+							<h6><i class="fas fa-user"></i>Đối tượng thu thuế</h6>
+						<ul class="list-group">
+							<!-- <li class="list-group-item"><a href="">Add</a></li> -->
+							<!-- <li class="list-group-item"><a href="">Edit</a></li> -->
+							<li class="list-group-item"><a th:href="@{/admin/listTaxer}">List</a></li>
+						</ul>
+					</li>
+					<li class="list-group-item">
+							<h6><i class="fas fa-minus"></i>Khoản giảm trừ</h6>
+						<ul class="list-group">
+							<li class="list-group-item"><a th:href="@{/admin/listKGT}">List</a></li>
+						</ul>
+					</li>
+					<li class="list-group-item">
+							<h6><i class="fas fa-slash"></i>Khoản miễn thuế</h6>
+						<ul class="list-group">
+							<li class="list-group-item"><a th:href="@{/admin/listKMT}">List</a></li>
+						</ul>
+					</li>
+					
+					
+					</ul>					
+				</div>
+	</div>
+</body>
+</html>
